@@ -74,7 +74,7 @@ namespace Tests
                 code: "ABP-925",
                 title: "You Can Really Fuck These Girls?! - The Legendary Pink Salon 13 - Get Your Fill Of A Tall Girl With Big Tits!",
                 actresses: new[] { "Reina Kashima" },
-                genres: new[] { "Tall Girl", "Featured Actress", "Cosplay", "Creampie", "Sex Toys", "Hi-Def", "Special 7 studios SALE" },
+                genres: new[] { "Tall Girl", "Featured Actress", "Cosplay", "Creampie", "Sex Toys", "Hi-Def" },
                 studio: "Prestige",
                 boxArt: "https://pics.r18.com/digital/video/118abp00925/118abp00925pl.jpg",
                 cover: "https://pics.r18.com/digital/video/118abp00925/118abp00925ps.jpg",

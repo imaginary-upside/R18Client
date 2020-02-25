@@ -95,7 +95,8 @@ namespace R18
             var actresses = doc.QuerySelectorAll("span[itemprop=name]")
                                ?.Select(n => NormalizeActress(n.TextContent));
             var genres = doc.QuerySelectorAll("[itemprop=genre]")
-                               ?.Select(n => Decensor(n.TextContent.Trim()));
+                               ?.Select(n => Decensor(n.TextContent.Trim()))
+                               .Where(genre => NotSaleGenre(genre));
             var studio = doc.QuerySelector("[itemprop=productionCompany]")?.TextContent.Trim();
             var boxArt = doc.QuerySelector("video")?.GetAttribute("poster");
             var cover = doc.QuerySelector("[itemprop=image]")?.GetAttribute("src");
@@ -164,6 +165,14 @@ namespace R18
 
             var rx = new Regex(String.Join("|", censoredWords.Keys.Select(k => Regex.Escape(k))));
             return rx.Replace(censored, m => censoredWords[m.Value]);
+        }
+
+        private static bool NotSaleGenre(string genre)
+        {
+            var rx = new Regex(@"\bsale\b", RegexOptions.IgnoreCase);
+            var match = rx.Match(genre);
+
+            return !match.Success;
         }
     }
 }
